@@ -1,7 +1,10 @@
 package com.example.crud.domain;
 
-public class Members {
-  int id;
+import lombok.Data;
+
+@Data
+public class Member {
+  Long id;
   String name;
   String email;
 }
