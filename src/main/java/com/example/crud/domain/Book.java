@@ -6,5 +6,5 @@ import lombok.Data;
 public class Book {
   Long id;
   String title;
-  int authorId;
+  Long authorId;
 }

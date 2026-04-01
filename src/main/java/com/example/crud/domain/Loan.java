@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class Loan {
   Long id;
-  int bookId;
-  int memberId;
+  Long bookId;
+  Long memberId;
   LocalDate loanDate;
   LocalDate returnDate;
 }
