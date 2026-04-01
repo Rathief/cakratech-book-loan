@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.crud.domain.Loan;
+import com.example.crud.dto.LoanDTO;
 import com.example.crud.service.LoanService;
 
 @RestController
@@ -25,25 +25,25 @@ public class LoanController {
   }
 
   @PostMapping
-  public Loan createLoan(@RequestBody Loan loan) {
-    return loanService.createLoan(loan);
+  public LoanDTO createLoan(@RequestBody LoanDTO req) {
+    return loanService.createLoan(req);
   }
 
   @GetMapping
-  public List<Loan> getAllLoans() {
+  public List<LoanDTO> getAllLoans() {
     return loanService.getAllLoans();
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Loan> getLoanById(@PathVariable Long id) {
+  public ResponseEntity<LoanDTO> getLoanById(@PathVariable Long id) {
     return loanService.getLoanById(id)
       .map(ResponseEntity::ok)
       .orElse(ResponseEntity.notFound().build());
   }
 
   @PutMapping("/{id}")
-    public ResponseEntity<Loan> updateLoan(@PathVariable Long id, @RequestBody Loan loan) {
-      return ResponseEntity.ok(loanService.updateLoan(id, loan));
+    public ResponseEntity<LoanDTO> updateLoan(@PathVariable Long id, @RequestBody LoanDTO req) {
+      return ResponseEntity.ok(loanService.updateLoan(id, req));
   }
 
   @DeleteMapping("/{id}")

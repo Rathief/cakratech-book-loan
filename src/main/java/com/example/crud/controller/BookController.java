@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.crud.domain.Book;
+import com.example.crud.dto.BookDTO;
 import com.example.crud.service.BookService;
 
 @RestController
@@ -25,24 +25,25 @@ public class BookController {
   }
 
   @PostMapping
-  public Book createBook(@RequestBody Book book) {
-    return bookService.createBook(book);
+  public ResponseEntity<BookDTO> createBook(@RequestBody BookDTO req) {
+    BookDTO resp = bookService.createBook(req);
+    return ResponseEntity.ok(resp);
   }
 
   @GetMapping
-  public List<Book> getAllBooks() {
+  public List<BookDTO> getAllBooks() {
     return bookService.getAllBooks();
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Book> getBookById(@PathVariable Long id) {
+  public ResponseEntity<BookDTO> getBookById(@PathVariable Long id) {
     return bookService.getBookById(id)
       .map(ResponseEntity::ok)
       .orElse(ResponseEntity.notFound().build());
   }
 
   @PutMapping("/{id}")
-    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book book) {
+    public ResponseEntity<BookDTO> updateBook(@PathVariable Long id, @RequestBody BookDTO book) {
       return ResponseEntity.ok(bookService.updateBook(id, book));
   }
 

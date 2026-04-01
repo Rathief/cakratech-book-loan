@@ -1,4 +1,4 @@
-package com.example.crud.domain;
+package com.example.crud.entities;
 
 import java.time.LocalDate;
 

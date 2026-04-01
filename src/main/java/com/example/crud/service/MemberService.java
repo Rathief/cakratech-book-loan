@@ -3,9 +3,12 @@ package com.example.crud.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.crud.domain.Member;
+import org.springframework.stereotype.Service;
+
+import com.example.crud.entities.Member;
 import com.example.crud.repository.MemberRepository;
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 

@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.crud.domain.Author;
+import com.example.crud.entities.Author;
 import com.example.crud.repository.AuthorRepository;
 
 @Service

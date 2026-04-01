@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.crud.domain.Member;
+import com.example.crud.entities.Member;
 import com.example.crud.service.MemberService;
 
 @RestController

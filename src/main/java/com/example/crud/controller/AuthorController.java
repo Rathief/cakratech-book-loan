@@ -1,6 +1,6 @@
 package com.example.crud.controller;
 
-import com.example.crud.domain.Author;
+import com.example.crud.entities.Author;
 import com.example.crud.service.AuthorService;
 
 import java.util.List;
